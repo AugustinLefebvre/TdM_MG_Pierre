@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+        <header>
+            <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#">
+                            <img alt="logo-head" src="img/fond.jpg" class="img-head">
+                        </a>
+                    </div>
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                        <ul class="nav navbar-nav listebtn">
+                            <li><a class="menu-btn" href="">Accueil</a></li>
+                            <li><a class="menu-btn" href="">Qui sommes nous ?</a></li>
+                            <li><a class="menu-btn" href="">Conseillez nous</a></li>
+                            <li><a class="menu-btn" href="">Participez</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+            </nav>
+        </header>
+<!-- partie carte Google maps-->
+        <div id="map"></div>
+<!-- transition bas -->
+        <div class="bouton-descente"><a href="#bas">Descendre</a></div>
+        <div class="trait"></div>
+<!-- partie boutons p2-->
+        <div id="bas"></div>
+        <div class="partie-bas row">
+            <div class="col-md-4 btn-gauche">
+                <h2>Articles</h2>
+            </div>
+            <div class="col-md-4 btn-centre">
+                <h2>Photos</h2>
+            </div>
+            <div class="col-md-4 btn-droite">
+                <h2>Conseils</h2>
+            </div>
+        </div>
+        <footer>
+            <div>Footer de ouf avec plein d'infos</div>
+        </footer>
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAiyE9-Ee1H0dUNvhMq8hBDSRISwoIRb1E&callback=initMap">
+    </script>
+{% endblock %}
+
+{% block stylesheets %}
+
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	{% for article in articles %}
+	{{ article.titre }}
+	{{ article.date.date }}
+	{{ article.contenu }}
+	{% endfor %}
+	<form action="{{ path('article_create') }}" method="post">
+		<label for="titre">Titre :</label>
+		<input type="string" name="titre"/>
+		<textarea name="contenu"></textarea>
+		<input type="submit" value="valider"/>
+	</form>
+{% endblock %}
