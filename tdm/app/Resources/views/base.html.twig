@@ -12,7 +12,30 @@
 
     </head>
     <body>
+        <header>
+            <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="{{ path('accueil') }}">
+                            <img alt="logo-head" src="img/fond.jpg" class="img-head">
+                        </a>
+                    </div>
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                        <ul class="nav navbar-nav listebtn">
+                            <li><a class="menu-btn" href="{{ path('accueil') }}">Accueil</a></li>
+                            <li><a class="menu-btn" href="{{ path('presentation')}}">Qui sommes nous ?</a></li>
+                            <li><a class="menu-btn" href="{{ path('conseil') }}">Conseillez nous</a></li>
+                            <li><a class="menu-btn" href="">Participez</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+            </nav>
+        </header>
+
         {% block body %}{% endblock %}
+        
         <script type="text/javascript" src="{{ asset('js/script.js') }}"></script>
     </body>
 </html>

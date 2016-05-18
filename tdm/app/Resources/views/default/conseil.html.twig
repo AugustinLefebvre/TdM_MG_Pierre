@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+	<form action="{{ path('conseil_send') }}" method="post" class="form-articles">
+		<label for="nom">Nom complet:</label>
+		<input type="string" name="nom"/>
+		<br/>
+		<label for="email">Votre Email:</label>
+		<input type="string" name="email"/>
+		<br/>
+		<label for="conseil">Motif:</label>
+		<select type="string" name="motif">
+			<option></option>
+			<option>Conseils Pays</option>
+			<option>Recommander un contact</option>
+		</select>
+		<br/>
+		<label for="titre">Votre Conseil/Recommandation :</label>
+		<textarea name="conseil"></textarea>
+		<input type="submit" value="envoyer"/>
+	</form>
+{% endblock %}

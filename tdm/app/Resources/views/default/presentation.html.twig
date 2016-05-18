@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<div class="baisse-haut"></div>
+	<div class="row">
+		<div class="col-md-6 pres">
+			<h2>MG</h2>
+			<div class="col-md-6">
+				<img alt="img-mg" src="{{ asset('/img/fond.jpg') }}" class="img-profil"/>
+			</div>
+			<div class="col-md-6">
+				plein de texte
+			</div>
+			
+			<div class="col-md-12">
+				encore plus de texte
+			</div>
+		</div>
+		<div class="col-md-6 pres">
+			<h2>Pierre</h2>
+			<div class="col-md-6">
+				<img alt="img-pierre" src="{{ asset('/img/fond.jpg') }}" class="img-profil"/>
+			</div>
+			<div class="col-md-6">
+				plein de texte
+			</div>
+
+			<div class="col-md-12">
+				encore plus de texte avec plein de largeur (imaginez ce potentiel). Quel magnifique outil que Bootstrap
+			</div>
+		</div>
+	</div>
+{% endblock %}

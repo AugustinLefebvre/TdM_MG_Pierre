@@ -43,4 +43,13 @@ class ArticleController extends Controller
         return $response;
 
     }
+    public function articlespublicsShowAction ()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $articles=$em->getRepository('ArticleBundle:Article')->findAll();
+
+        return $this->render('default/articlespublics.html.twig', array(
+            'articles' => $articles,
+            ));   
+    }
 }

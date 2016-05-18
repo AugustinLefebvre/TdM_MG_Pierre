@@ -1,14 +1,8 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-
-	<form action="{{ path('article_create') }}" method="post" class="form-articles">
-		<label for="titre">Titre :</label>
-		<input type="string" name="titre"/>
-		<label for="titre">Contenu :</label>
-		<textarea name="contenu"></textarea>
-		<input type="submit" value="valider"/>
-	</form>
+<div class="baisse-haut"></div>
+<h2>Page d'articles</h2>
 	{% for article in articles %}
 	<div class="col-md-3 article">	
 		<div class="row">

@@ -9,15 +9,33 @@ app:
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
 
+#routes persos
+#partie publique
+
 accueil:
     path:     /
     defaults: { _controller: AppBundle:Default:index }
 
-article:
+articlespublics_show:
     path:     /articles
-    defaults: { _controller: ArticleBundle:Default:index}
+    defaults: { _controller: ArticleBundle:Article:articlespublicsShow }
+
+presentation:
+    path:     /presentation
+    defaults: { _controller: AppBundle:Presentation:presentation }
+
+conseil:
+    path:     /conseil
+    defaults: { _controller: AppBundle:Conseil:conseilShow }
+
+conseil_send:
+    path:     /conseil_check
+    defaults: { _controller: AppBundle:Conseil:conseilSend }
+
+#partie privée
+
 article_show:
-    path:     /articles
+    path:     /user/articles
     defaults: { _controller: ArticleBundle:Article:articleShow }
 
 article_create:
