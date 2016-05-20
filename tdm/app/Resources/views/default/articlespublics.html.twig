@@ -3,7 +3,10 @@
 {% block body %}
 <div class="baisse-haut"></div>
 <h2>Page d'articles</h2>
+	
+	{% set i = 0 %}
 	{% for article in articles %}
+	
 	<div class="col-md-3 article">	
 		<div class="row">
 			<div class="col-md-6">{{ article.titre }}</div>
@@ -12,6 +15,12 @@
 		<br/>
 		<div class="contenu">{{ article.contenu }}</div>
 		<br/>
+		{% if tab[i].url != 1 %}
+			<img src="{{ tab[i].url }}" alt="test" class="img-article">
+		{% endif %}
 	</div>
+
+	{% set i = i+1 %}
 	{% endfor %}
+	
 {% endblock %}

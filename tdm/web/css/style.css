@@ -152,7 +152,11 @@ footer
 	margin-bottom: 30px;
 	height: 300px;
 }
-
+.img-article
+{
+	height: 50%;
+	width: 100%;
+}
 /*============================= PAGE CREATION ARTICLES ========================*/
 
 .form-articles
