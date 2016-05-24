@@ -41,3 +41,6 @@ article_show:
 article_create:
     path:     /article/new
     defaults: { _controller: ArticleBundle:Article:articleCreate }
+conseil_view:
+    path:    /user/conseil
+    defaults: { _controller: AppBundle:Conseil:conseilView }

@@ -40,4 +40,13 @@ class ConseilController extends Controller
             'conseil' => $conseil
         ));     
     }
+    public function conseilViewAction ()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $conseil=$em->getRepository('AppBundle:Conseil')->findAll();
+        
+        return $this->render('default/conseilview.html.twig', array(
+            'conseils' => $conseil
+        ));     
+    }
 }

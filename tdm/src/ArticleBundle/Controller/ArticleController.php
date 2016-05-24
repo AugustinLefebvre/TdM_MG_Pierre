@@ -21,7 +21,12 @@ class ArticleController extends Controller
         {
 
             $photo=$em->getRepository('ArticleBundle:Photos')->findOneByIdArticle($article->getId());
-            if(!empty($photo)){$url=$photo->getUrl();}else{$url=1;}
+            
+            if(!empty($photo))
+                {$url=$photo->getUrl();}
+            else
+                {$url=1;}
+
             $tab[]=array(
                 'id'=>$article->getId(),
                 'titre'=>$article->getTitre(),

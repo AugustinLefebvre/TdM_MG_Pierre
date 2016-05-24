@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+	<div class="baisse-haut"></div>
+	{% for conseil in conseils %}
+		<div class="col-md-6">
+			<div class="col-md-6">
+				conseil donné par: {{ conseil.nom }}
+			</div>
+			<div class="col-md-6">
+				adresse Email: {{ conseil.email }}
+			</div>
+			<br/>
+			<div class="col-md-12">
+				Motif: {{ conseil.motif }}
+			</div>
+			<br/>
+			<div class="col-md-12">
+				Conseil: {{ conseil.content }}
+			</div>
+			<br/>
+			<br/>
+		</div>
+	{% endfor %}
+{% endblock %}
