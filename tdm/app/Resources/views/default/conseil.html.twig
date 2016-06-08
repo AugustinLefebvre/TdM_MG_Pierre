@@ -1,21 +1,26 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-	<form action="{{ path('conseil_send') }}" method="post" class="form-articles">
-		<label for="nom">Nom complet:</label>
-		<input type="string" name="nom"/>
+	<h1 class="titreconseil">Laisser un conseil</h1>
+	<div class="col-md-3"></div>
+	<form action="{{ path('conseil_send') }}" method="post" class="form-conseil col-md-6">
+		<label for="nom" class="col-md-6">Nom complet:</label>
+		<input type="string" name="nom" id="nom" class="col-md-6"/>
 		<br/>
-		<label for="email">Votre Email:</label>
-		<input type="string" name="email"/>
+		<label for="email" class="col-md-6">Votre Email:</label>
+		<input type="string" name="email" id="email" class="col-md-6"/>
 		<br/>
-		<label for="conseil">Motif:</label>
-		<select type="string" name="motif">
+		<label for="conseil" class="col-md-6 motif">Motif:</label>
+		<select type="string" name="motif" class="col-md-6">
 			<option></option>
 			<option>Conseils Pays</option>
 			<option>Recommander un contact</option>
 		</select>
 		<br/>
-		<label for="titre">Votre Conseil/Recommandation :</label>
-		<textarea name="conseil"></textarea>
-		<input type="submit" value="envoyer"/>
+		<div class="row">
+			<label for="titre" class="col-md-7">Votre Conseil/Recommandation :</label>
+			<div class="col-md-5"><textarea name="conseil" class="textarea"></textarea></div>
+		</div>
+		<input type="submit" class="boutonsubmit" value="envoyer"/>
 	</form>
+	<div class="col-md-3"></div>
 {% endblock %}

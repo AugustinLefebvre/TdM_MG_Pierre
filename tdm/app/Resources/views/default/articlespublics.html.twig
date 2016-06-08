@@ -15,8 +15,13 @@
 		<br/>
 		<div class="contenu">{{ article.contenu }}</div>
 		<br/>
-		{% if tab[i].url != 1 %}
-			<img src="{{ tab[i].url }}" alt="test" class="img-article">
+		{% if tabphoto != 1 %}
+			{% for j in 0..compteur %}
+				{% if tabphoto[j].path != 1 and tabphoto[j].idArticle == tab[i].id %}
+					<img src="{{ asset('/uploads/pictures/' ~tabphoto[j].path) }}" alt="test" class="img-article">
+				{% endif %}
+
+			{% endfor %}
 		{% endif %}
 	</div>
 

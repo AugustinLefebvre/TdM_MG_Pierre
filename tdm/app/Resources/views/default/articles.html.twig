@@ -8,12 +8,10 @@
 		<label for="titre">Contenu :</label>
 		<textarea name="contenu"></textarea>
 		<br/>
-		<label for="nom_photo">Titre de la photo</label>
-		<input type="string" name="nom_photo"/>
-		<label for="url">Url de la photo</label>
-		<input type="string" name="url"/>
 		<input type="submit" value="valider"/>
 	</form>
+	
+
 	{% set i = 0 %}
 	{% for article in articles %}
 	<div class="col-md-3 article">	
@@ -24,8 +22,14 @@
 		<br/>
 		<div class="contenu">{{ article.contenu }}</div>
 		<br/>
-		{% if tab[i].url != 1 %}
-			<img src="{{ tab[i].url }}" alt="test" class="img-article">
+		
+		{% if tabphoto != 1 %}
+			{% for j in 0..compteur %}
+				{% if tabphoto[j].path != 1 and tabphoto[j].idArticle == tab[i].id %}
+					<img src="{{ asset('/uploads/pictures/' ~tabphoto[j].path) }}" alt="test" class="img-article">
+				{% endif %}
+
+			{% endfor %}
 		{% endif %}
 	</div>
 	{% set i = i+1 %}

@@ -38,9 +38,9 @@ class Photos
     /**
      * @var string
      *
-     * @ORM\Column(name="url", type="string", length=255)
+     * @ORM\Column(name="path", type="string", length=255)
      */
-    private $url;
+    private $path;
 
 
     /**
@@ -102,27 +102,27 @@ class Photos
     }
 
     /**
-     * Set url
+     * Set path
      *
-     * @param string $url
+     * @param string $path
      *
      * @return Photos
      */
-    public function setUrl($url)
+    public function setPath($path)
     {
-        $this->url = $url;
+        $this->path = $path;
 
         return $this;
     }
 
     /**
-     * Get url
+     * Get path
      *
      * @return string
      */
-    public function getUrl()
+    public function getPath()
     {
-        return $this->url;
+        return $this->path;
     }
 }
 

@@ -2,25 +2,31 @@
 
 {% block body %}
 <!-- partie carte Google maps-->
-        <div id="map"></div>
+        <div class="map"><div id="map"></div></div>
 <!-- transition bas -->
         <div class="bouton-descente"><a href="#bas">Descendre</a></div>
         <div class="trait"></div>
 <!-- partie boutons p2-->
         <div id="bas"></div>
         <div class="partie-bas row">
-            <div class="col-md-4 btn-gauche">
-                <h2><a href="{{ path('articlespublics_show')}}">Articles</a></h2>
-                <img src="{{ asset('img/iconearticle.png') }}" alt="article">
-            </div>
-            <div class="col-md-4 btn-centre">
-                <h2><a href="{{ path('accueil') }}">Photos</a></h2>
-                <img src="{{ asset('img/iconeimage.png') }}" alt="article">
-            </div>
-            <div class="col-md-4 btn-droite">
-                <h2><a href="{{ path('conseil') }}">Conseils</a></h2>
-                <img src="{{ asset('img/iconearticle.png') }}" alt="article">
-            </div>
+            <a href="{{ path('articlespublics_show')}}" class="btn-gauche-a">
+                <div class="col-md-4 btn-gauche">
+                    <h2>Articles</h2>
+                    <img src="{{ asset('img/iconearticle.png') }}" alt="article">
+                </div>
+            </a>
+            <a href="{{ path('accueil') }}">
+                <div class="col-md-4 btn-centre">
+                    <h2>Photos</h2>
+                    <img src="{{ asset('img/iconeimage.png') }}" alt="article">
+                </div>
+            </a>
+            <a href="{{ path('conseil') }}">
+                <div class="col-md-4 btn-droite">
+                    <h2>Conseils</h2>
+                    <img src="{{ asset('img/iconeconseil.png') }}" alt="article">
+                </div>
+            </a>
         </div>
         <footer>
             <div>Footer de ouf avec plein d'infos</div>

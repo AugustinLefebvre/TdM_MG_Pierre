@@ -1,11 +1,14 @@
 {% extends 'base.html.twig' %}
 {% block body %}
 	<div class="baisse-haut"></div>
-	Nom: {{ conseil.nom }}
-	<br/>
-	Email: {{ conseil.email }}
-	<br/>
-	Motif: {{ conseil.motif }}
-	<br/>
-	Conseil: {{ conseil.content }}
+	<div class="conseilcheck">
+		<h2>Votre conseil à bien été envoyé</h2>
+		Nom: {{ conseil.nom }}
+		<br/>
+		Email: {{ conseil.email }}
+		<br/>
+		Motif: {{ conseil.motif }}
+		<br/>
+		Conseil: {{ conseil.content }}
+	</div>
 {% endblock %}
