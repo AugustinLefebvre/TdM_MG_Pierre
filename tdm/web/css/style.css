@@ -16,6 +16,10 @@ header
 {
 
 }
+h3
+{
+	text-align: center;
+}
 nav
 {
 	background-color: green !important;
@@ -317,4 +321,25 @@ footer
 	{
 		display:block;
 	}
+}
+/*============PAGE LISTE PHOTOS============*/
+.fond-photo
+{
+	background-color: rgba(91, 127, 150, 0.2);
+	height: 550px;
+	border: 1px solid black;
+}
+.img-liste
+{
+	width: 90%;
+	max-height: 500px;
+	margin-top: 20px;
+	margin-left:5%;
+	margin-right: 5%;
+}
+.linkphotos
+{
+	position:absolute;
+	bottom: 20px;
+	width: 90%;
 }

@@ -1,0 +1,10 @@
+photo_homepage:
+    path:     /
+    defaults: { _controller: PhotoBundle:Default:index }
+
+photo_list:
+    path:     /list
+    defaults: { _controller: PhotoBundle:Photo:showPhoto}
+photos_article:
+    path:     /list/{id}
+    defaults: { _controller: PhotoBundle:Photo:showPhotos }

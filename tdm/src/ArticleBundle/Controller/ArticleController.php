@@ -34,10 +34,7 @@ class ArticleController extends Controller
                     );
                 $compteur= $compteur+1;
             }
-             if (empty($tabphoto))
-                {
-                    $tabphoto=1;
-                };
+             
             $tab[]= array(
                 'id'=>$article->getId(),
                 'titre'=>$article->getTitre(),
@@ -45,7 +42,14 @@ class ArticleController extends Controller
 
                 );
         }
-
+        if (empty($tab))
+        {
+            $tab=1;
+        }
+        if (empty($tabphoto))
+        {
+            $tabphoto=1;
+        }
         return $this->render('default/articles.html.twig', array(
             'articles' => $articles,
             'photos' => $photos,
@@ -132,10 +136,6 @@ $em = $this->getDoctrine()->getManager();
                     );
                 $compteur= $compteur+1;
             }
-             if (empty($tabphoto))
-                {
-                    $tabphoto=1;
-                };
             
             $tab[]=array(
                 'id'=>$article->getId(),
@@ -143,6 +143,14 @@ $em = $this->getDoctrine()->getManager();
                 'date'=>$article->getDate(),
 
                 );
+        }
+        if (empty($tab))
+        {
+            $tab=1;
+        }
+        if (empty($tabphoto))
+        {
+            $tabphoto=1;
         }
         return $this->render('default/articlespublics.html.twig', array(
             'articles' => $articles,

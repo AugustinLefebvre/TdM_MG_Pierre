@@ -1,0 +1,6 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+	{% for i in 0..compte-1 %}
+		<img src="{{ asset('uploads/pictures/' ~ photos[i].path ) }}">
+	{% endfor %}
+{% endblock %}

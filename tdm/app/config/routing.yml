@@ -1,3 +1,7 @@
+photo:
+    resource: "@PhotoBundle/Resources/config/routing.yml"
+    prefix:   /photo
+
 article:
     resource: "@ArticleBundle/Resources/config/routing.yml"
     prefix:   /
