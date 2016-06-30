@@ -9,7 +9,7 @@
 	
 	<div class="col-md-3 article">	
 		<div class="row">
-			<div class="col-md-6">{{ article.titre }}</div>
+			<div class="col-md-6"><a href="{{ path('one_article', {'id':article.id } ) }}">{{ article.titre }}</a></div>
 			<div class="col-md-6">{{ article.date.date | date("d/m/y") }}</div>
 		</div>
 		<br/>

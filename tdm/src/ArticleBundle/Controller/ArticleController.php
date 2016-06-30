@@ -160,4 +160,16 @@ $em = $this->getDoctrine()->getManager();
             'compteur'=>$compteur,
             ));
     }
+
+    public function oneArticleAction ($id)
+    {
+        $em=$this->getDoctrine()->getManager();
+        $article=$em->getRepository('ArticleBundle:Article')->findOneById($id);
+        $photos=$em->getRepository('ArticleBundle:Photos')->findByIdArticle($id);
+
+        return $this->render('ArticleBundle:Default:onearticle.html.twig',array(
+            "article"=>$article,
+            "photos"=>$photos,
+            ));
+    }
 }

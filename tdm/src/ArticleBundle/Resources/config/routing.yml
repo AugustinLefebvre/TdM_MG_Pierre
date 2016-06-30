@@ -1,3 +1,7 @@
 article_homepage:
     path:     /
     defaults: { _controller: ArticleBundle:Default:index }
+
+one_article:
+    path:     /article/{id}
+    defaults: { _controller: ArticleBundle:Article:oneArticle }

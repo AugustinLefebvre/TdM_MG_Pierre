@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+	<div class="col-md-6">
+		<div>
+			<h1>{{ article.titre }}</h1>
+			{{article.date.date | date("d/m/y") }}
+		</div>
+		<div>{{ article.contenu }}</div>
+	</div>
+	<div class="col-md-6">
+		<h3>Galerie photos de l'article</h3>
+		{% for photo in photos %}
+			<img src="{{ asset('/uploads/pictures/' ~photo.path) }}" alt="test" class="img-article">
+		{% endfor %}
+	</div>
+{% endblock %}
