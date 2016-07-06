@@ -1,0 +1,20 @@
+# conseil_homepage:
+#     path:     /
+#     defaults: { _controller: ConseilBundle:Default:index }
+
+conseil:
+    path:     /conseil
+    defaults: { _controller: ConseilBundle:Conseil:conseilShow }
+
+
+conseil_send:
+    path:     /conseil_check
+    defaults: { _controller: ConseilBundle:Conseil:conseilSend }
+
+
+#partie privée
+
+
+conseil_view:
+    path:     /user/conseil
+    defaults: { _controller: conseilBundle:Conseil:conseilView }

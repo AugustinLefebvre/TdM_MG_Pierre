@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Controller;
+namespace ViewsBundle\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -14,7 +14,7 @@ class PresentationController extends Controller
     public function presentationAction(Request $request)
     {
         // replace this example code with whatever you need
-        return $this->render('default/presentation.html.twig', array(
+        return $this->render('ViewsBundle:Default:presentation.html.twig', array(
             'base_dir' => realpath($this->container->getParameter('kernel.root_dir').'/..'),
         ));
     }

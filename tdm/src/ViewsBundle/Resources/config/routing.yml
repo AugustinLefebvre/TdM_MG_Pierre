@@ -1,0 +1,6 @@
+views_homepage:
+    path:     /
+    defaults: { _controller: ViewsBundle:Default:index }
+presentation:
+    path:     /presentation
+    defaults: { _controller: ViewsBundle:Presentation:presentation }

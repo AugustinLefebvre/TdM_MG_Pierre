@@ -1,0 +1,4 @@
+services:
+#    views.example:
+#        class: ViewsBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]

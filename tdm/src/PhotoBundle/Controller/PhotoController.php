@@ -3,6 +3,15 @@
 namespace PhotoBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use ArticleBundle\Entity\Article;
+use ArticleBundle\Entity\Photos;
+use ArticleBundle\Form\PhotosType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class PhotoController extends Controller
 {
@@ -58,6 +67,40 @@ class PhotoController extends Controller
             'article'=>$article,
             'photos'=>$tabphoto,
             'compte'=>$compte,
+        ));
+    }
+    public function newPhotoAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $photos = new Photos();
+        $form = $this->createForm('ArticleBundle\Form\PhotosType', $photos);
+        $form->handleRequest($request);
+
+        if ($form->isValid()) {
+            // $file stores the uploaded PDF file
+            /** @var Symfony\Component\HttpFoundation\File\UploadedFile $file */
+            $file = $photos->getPath();
+
+            // Generate a unique name for the file before saving it
+            $path = md5(uniqid()).'.'.$file->guessExtension();
+
+            // Move the file to the directory where images are stored
+            $pathDir = $this->container->getParameter('kernel.root_dir').'/../web/uploads/pictures';
+            $file->move($pathDir, $path);
+
+            // Update the 'path' property to store the PDF file name
+            // instead of its contents
+            $photos->setPath($path);
+
+            // ... persist the $article variable or any other work
+
+            $em->persist($photos);
+            $em->flush();
+        }
+
+        return $this->render('PhotoBundle:Default:newphoto.html.twig', array(
+            'form' => $form->createView(),
         ));
     }
 }

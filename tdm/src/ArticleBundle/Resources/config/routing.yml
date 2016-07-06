@@ -5,3 +5,15 @@ article_homepage:
 one_article:
     path:     /article/{id}
     defaults: { _controller: ArticleBundle:Article:oneArticle }
+
+article_show:
+    path:     /user/articles
+    defaults: { _controller: ArticleBundle:Article:articleShow }
+
+article_create:
+    path:     /user/article/new
+    defaults: { _controller: ArticleBundle:Article:articleCreate }
+
+articlespublics_show:
+    path:     /articles
+    defaults: { _controller: ArticleBundle:Article:articlespublicsShow }

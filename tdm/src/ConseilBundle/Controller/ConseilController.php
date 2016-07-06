@@ -1,11 +1,11 @@
 <?php
 
-namespace AppBundle\Controller;
+namespace ConseilBundle\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use AppBundle\Entity\Conseil;
+use ConseilBundle\Entity\Conseil;
 
 class ConseilController extends Controller
 {
@@ -15,7 +15,7 @@ class ConseilController extends Controller
     public function conseilShowAction()
     {
         // replace this example code with whatever you need
-        return $this->render('default/conseil.html.twig', array(
+        return $this->render('ConseilBundle:Default:conseil.html.twig', array(
             'base_dir' => realpath($this->container->getParameter('kernel.root_dir').'/..'),
         ));
     }
@@ -31,21 +31,21 @@ class ConseilController extends Controller
         $conseil->setNom($nom);
         $conseil->setEmail($email);
         $conseil->setMotif($motif);
-        $conseil->setContent($content);
+        $conseil->setContenu($content);
 
         $em->persist($conseil);
         $em->flush();
 
-        return $this->render('default/conseilcheck.html.twig', array(
+        return $this->render('ConseilBundle:Default:conseilcheck.html.twig', array(
             'conseil' => $conseil
         ));     
     }
     public function conseilViewAction ()
     {
         $em = $this->getDoctrine()->getManager();
-        $conseil=$em->getRepository('AppBundle:Conseil')->findAll();
+        $conseil=$em->getRepository('ConseilBundle:Conseil')->findAll();
         
-        return $this->render('default/conseilview.html.twig', array(
+        return $this->render('ConseilBundle:Default:conseilview.html.twig', array(
             'conseils' => $conseil
         ));     
     }

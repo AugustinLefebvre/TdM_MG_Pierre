@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Entity;
+namespace ConseilBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Conseil
  *
  * @ORM\Table(name="conseil")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\ConseilRepository")
+ * @ORM\Entity(repositoryClass="ConseilBundle\Repository\ConseilRepository")
  */
 class Conseil
 {
@@ -31,23 +31,23 @@ class Conseil
     /**
      * @var string
      *
-     * @ORM\Column(name="email", type="string", length=255)
+     * @ORM\Column(name="email", type="string", length=255, nullable=true)
      */
     private $email;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="motif", type="string", length=255)
+     * @ORM\Column(name="motif", type="string", length=255, nullable=true)
      */
     private $motif;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="content", type="text")
+     * @ORM\Column(name="contenu", type="text", nullable=true)
      */
-    private $content;
+    private $contenu;
 
 
     /**
@@ -133,27 +133,27 @@ class Conseil
     }
 
     /**
-     * Set content
+     * Set contenu
      *
-     * @param string $content
+     * @param string $contenu
      *
      * @return Conseil
      */
-    public function setContent($content)
+    public function setContenu($contenu)
     {
-        $this->content = $content;
+        $this->contenu = $contenu;
 
         return $this;
     }
 
     /**
-     * Get content
+     * Get contenu
      *
      * @return string
      */
-    public function getContent()
+    public function getContenu()
     {
-        return $this->content;
+        return $this->contenu;
     }
 }
 

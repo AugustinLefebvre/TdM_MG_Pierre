@@ -12,7 +12,7 @@ use DateTime;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use ArticleBundle\Form\PhotosType;
+
 
 class ArticleController extends Controller
 {
@@ -50,7 +50,7 @@ class ArticleController extends Controller
         {
             $tabphoto=1;
         }
-        return $this->render('default/articles.html.twig', array(
+        return $this->render('ArticleBundle:Default:articles.html.twig', array(
             'articles' => $articles,
             'photos' => $photos,
             'tab' => $tab,
@@ -66,7 +66,7 @@ class ArticleController extends Controller
         $titre = $request->request->get('titre');
         $contenu = $request->request->get('contenu');
         #photos de l'article
-        $nom_photo = $request->request->get('nom_photo'); 
+        // $nom_photo = $request->request->get('nom_photo'); 
         
         if (!empty($titre) && !empty($contenu))
         {
@@ -74,53 +74,20 @@ class ArticleController extends Controller
             $article->setTitre($titre);
             $article->setDate(new Datetime());
             $article->setContenu($contenu);
+
             $em->persist($article);
             $em->flush();
         }
-        
         
         $url = $this -> generateUrl('article_show');
         $response = new RedirectResponse($url);
         return $response;
     }
-      public function newphotoAction(Request $request)
-    {
-        $em = $this->getDoctrine()->getManager();
 
-        $photos = new Photos();
-        $form = $this->createForm('ArticleBundle\Form\PhotosType', $photos);
-        $form->handleRequest($request);
-
-        if ($form->isValid()) {
-            // $file stores the uploaded PDF file
-            /** @var Symfony\Component\HttpFoundation\File\UploadedFile $file */
-            $file = $photos->getPath();
-
-            // Generate a unique name for the file before saving it
-            $path = md5(uniqid()).'.'.$file->guessExtension();
-
-            // Move the file to the directory where images are stored
-            $pathDir = $this->container->getParameter('kernel.root_dir').'/../web/uploads/pictures';
-            $file->move($pathDir, $path);
-
-            // Update the 'path' property to store the PDF file name
-            // instead of its contents
-            $photos->setPath($path);
-
-            // ... persist the $article variable or any other work
-
-            $em->persist($photos);
-            $em->flush();
-        }
-
-        return $this->render('/default/newphoto.html.twig', array(
-            'form' => $form->createView(),
-        ));
-    }
 
     public function articlespublicsShowAction ()
     {
-$em = $this->getDoctrine()->getManager();
+        $em = $this->getDoctrine()->getManager();
         $articles=$em->getRepository('ArticleBundle:Article')->findAll();
         $photos=$em->getRepository('ArticleBundle:Photos')->findAll();
         $compteur=-1;
@@ -152,7 +119,8 @@ $em = $this->getDoctrine()->getManager();
         {
             $tabphoto=1;
         }
-        return $this->render('default/articlespublics.html.twig', array(
+            
+        return $this->render('ArticleBundle:Default:articlespublics.html.twig', array(
             'articles' => $articles,
             'photos' => $photos,
             'tab' => $tab,
@@ -164,9 +132,10 @@ $em = $this->getDoctrine()->getManager();
     public function oneArticleAction ($id)
     {
         $em=$this->getDoctrine()->getManager();
+
         $article=$em->getRepository('ArticleBundle:Article')->findOneById($id);
         $photos=$em->getRepository('ArticleBundle:Photos')->findByIdArticle($id);
-
+        
         return $this->render('ArticleBundle:Default:onearticle.html.twig',array(
             "article"=>$article,
             "photos"=>$photos,

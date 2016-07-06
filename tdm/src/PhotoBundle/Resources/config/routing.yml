@@ -3,8 +3,11 @@ photo_homepage:
     defaults: { _controller: PhotoBundle:Default:index }
 
 photo_list:
-    path:     /list
+    path:     /photo/list
     defaults: { _controller: PhotoBundle:Photo:showPhoto}
 photos_article:
-    path:     /list/{id}
+    path:     /photo/list/{id}
     defaults: { _controller: PhotoBundle:Photo:showPhotos }
+new_photo:
+    path:     /user/newphoto
+    defaults: { _controller: PhotoBundle:Photo:newPhoto }
