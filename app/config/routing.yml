@@ -26,7 +26,7 @@ fos_user:
 
 accueil:
     path:     /
-    defaults: { _controller: AppBundle:Default:index }
+    defaults: { _controller: ViewsBundle:Default:index }
 
 
 
