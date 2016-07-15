@@ -7,15 +7,16 @@
 	{% set i = 0 %}
 	{% for article in articles %}
 	
-	<div class="col-md-3 article">	
+	<div class="col-md-4 article">	
 		<div class="row">
-			<div class="col-md-6"><a href="{{ path('one_article', {'id':article.id } ) }}">{{ article.titre }}</a></div>
-			<div class="col-md-6">{{ article.date.date | date("d/m/y") }}</div>
+			<div class="col-md-6"><a href="{{ path('one_article', {'id':article.id } ) }}" ><button class="btn btn-default">{{ article.titre }}</button></a></div>
+			<div class="col-md-6 datearticle">{{ article.date.date | date("d/m/y") }}</div>
 		</div>
 		<br/>
 		<div class="contenu">{{ article.contenu }}</div>
 		<br/>
 		{% if tabphoto != 1 %}
+			<div class="separator"></div>
 			{% for j in 0..compteur %}
 				{% if tabphoto[j].path != 1 and tabphoto[j].idArticle == tab[i].id %}
 					<img src="{{ asset('/uploads/pictures/' ~tabphoto[j].path) }}" alt="test" class="img-article">

@@ -6,10 +6,10 @@
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('img/favicon.png') }}" />
         <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
-        <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}" type="text/css"/>
+        {# <link media="handheld" rel="stylesheet" href="{{ asset('css/mobile.css') }}" type="text/css" /> #}
         <script type="text/javascript" src="{{ asset('js/jquery-1.12.2.js') }}"></script>
         <script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>
-
     </head>
     <body>
         <header>
@@ -44,5 +44,6 @@
         {% block body %}{% endblock %}
         
         <script type="text/javascript" src="{{ asset('js/script.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/navdetect.js') }}"></script>
     </body>
 </html>

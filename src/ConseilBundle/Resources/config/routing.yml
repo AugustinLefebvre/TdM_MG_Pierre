@@ -17,4 +17,4 @@ conseil_send:
 
 conseil_view:
     path:     /user/conseil
-    defaults: { _controller: conseilBundle:Conseil:conseilView }
+    defaults: { _controller: ConseilBundle:Conseil:conseilView }
