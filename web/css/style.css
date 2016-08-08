@@ -236,13 +236,14 @@ footer
 	.pres
 	{
 		position: relative;
-		height: 600px;
+		height: 500px;
 		width: 40%;
 		margin-left: 5%;
 		margin-right: 5%;
 		background-color: #008000;
 		border-radius: 10px;
-		color: black;
+		color: #000;
+		font-size: 17px;
 	}
 }
 @media all and (max-width: 900px){
@@ -255,13 +256,26 @@ footer
 		width: 100%;
 		background-color: #008000;
 		border-radius: 10px;
-		color: black;
+		color: #000;
+		font-size: 17px;
 	}	
 }
 .img-profil
 {
 	max-width: 100%;
 
+}
+.img-pierre
+{
+	padding-top: 30px;
+}
+.pres-begin
+{
+	padding-top: 25px;
+}
+.pres-end
+{
+	padding-top: 0px;
 }
 /*==================================== CONSEIL ===============================*/
 
