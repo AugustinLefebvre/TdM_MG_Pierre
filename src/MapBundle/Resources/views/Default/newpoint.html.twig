@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<h2 class="title" >Placez un point sur la carte, puis entrez un nom</h2>
+	<div id="map2" class="map"></div>
+
+	<form action="{{ path('create_point') }}" method="post">
+		<label for="newpointlat">Latitude</label>
+		<input id="newpointlat" name="pointlat"/>
+		
+		<label for="newpointlng">Longitude</label>
+		<input id="newpointlng" name="pointlng"/>
+		
+		<label>Définir un nom à ce point</label>
+		<input id="nameinput" name="pointname"/>
+		
+		<input type="submit" value="Ajouter">
+	</form>
+	<script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAiyE9-Ee1H0dUNvhMq8hBDSRISwoIRb1E&callback=initMap">
+    </script>
+    <script type="text/javascript">
+        {% set i = 0 %}
+        var pointstab = [];
+        {% for point in points %}
+            pointstab[{{ i }}] = [{{ point.lat }} , {{ point.lng }}, "{{ point.name }}" ];
+            {% set i = i+1 %}
+        {% endfor %}
+    </script>
+	{% block javascript %}
+    	<script type="text/javascript" src="{{ asset('js/placepoint.js') }}"></script>
+	{% endblock %}
+{% endblock %}

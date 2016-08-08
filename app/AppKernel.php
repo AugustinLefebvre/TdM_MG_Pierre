@@ -21,6 +21,7 @@ class AppKernel extends Kernel
             new PhotoBundle\PhotoBundle(),
             new ConseilBundle\ConseilBundle(),
             new ViewsBundle\ViewsBundle(),
+            new MapBundle\MapBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {

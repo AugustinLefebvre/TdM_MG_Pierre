@@ -37,6 +37,16 @@
     <script async defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAiyE9-Ee1H0dUNvhMq8hBDSRISwoIRb1E&callback=initMap">
     </script>
+    <script type="text/javascript" src="{{ asset('js/script.js') }}"></script>
+    <script type="text/javascript">
+        {% set i = 0 %}
+        var markericon = "{{ asset('img/marker.png') }}"
+        var pointstab = [];
+        {% for point in points %}
+            pointstab[{{ i }}] = [{{ point.lat }} , {{ point.lng }}, "{{ point.name }}" ];
+            {% set i = i+1 %}
+        {% endfor %}
+    </script>
 {% endblock %}
 
 {% block stylesheets %}

@@ -334,3 +334,25 @@ footer
 		z-index: 0;
 	}
 }
+
+/*==============PAGE DE CREATION DE POINTS=============== */
+
+.title
+{
+	text-align:center;
+	color: #000;
+	padding-bottom: 0px;
+}
+
+.map
+{
+	height: 600px;
+	border: black 5px solid;
+	margin-left: 10%;
+	margin-right: 10%;
+	z-index: 0;
+}
+#map2
+{
+	margin-top: 0px;
+}

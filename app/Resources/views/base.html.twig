@@ -43,9 +43,11 @@
             </nav>
         </header>
         <div class="baisse-haut"></div>
-        {% block body %}{% endblock %}
+        {% block body %}
+            {% block javascript %}
+                <script type="text/javascript" src="{{ asset('js/script.js') }}"></script>
+            {% endblock %}
+        {% endblock %}
         
-        <script type="text/javascript" src="{{ asset('js/script.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('js/navdetect.js') }}"></script>
     </body>
 </html>

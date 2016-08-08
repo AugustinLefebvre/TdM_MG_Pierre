@@ -1,0 +1,7 @@
+newpoint_view:
+    path:     /user/point
+    defaults: { _controller: MapBundle:Point:createPointView }
+
+create_point:
+    path:     /user/newpoint
+    defaults: { _controller: MapBundle:Point:newPoint }
