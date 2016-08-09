@@ -3,8 +3,15 @@
 {% block body %}
 
 {{ form_start(form) }}
-	{{ form_widget(form) }}
-    <input type="submit" value="send">
+	{{ form_row(form.nom, {'label':'nom de la photo (facultatif)' }) }}
+	<label for="articlename">Choisir un article</label>
+	<select name="idarticle" id="articlename">
+		{% for article in articles %}
+			<option>{{ article.titre }}</option>
+		{% endfor %}
+	</select>
+	{{ form_row(form.path )}}
+    <input type="submit" value="ajouter">
 {{ form_end(form) }}
 
 {% endblock %}

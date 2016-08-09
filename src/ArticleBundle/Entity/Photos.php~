@@ -29,8 +29,9 @@ class Photos
     private $nom;
 
     /**
-     * @ORM\ManyToOne(targetEntity="ArticleBundle\Entity\Article", cascade={"persist"})
-     * @ORM\JoinColumn(nullable=false)
+     * @var int
+     *
+     * @ORM\Column(name="idArticle", type="integer")
      */
     private $idArticle;
 
@@ -100,14 +101,13 @@ class Photos
         return $this->path;
     }
 
-    /**
+/**
      * Set idArticle
      *
-     * @param \ArticleBundle\Entity\Article $idArticle
-     *
-     * @return Photos
+     * @param integer $idArticle
+     * @return Checkpoint
      */
-    public function setIdArticle(\ArticleBundle\Entity\Article $idArticle = null)
+    public function setIdArticle($idArticle)
     {
         $this->idArticle = $idArticle;
 
@@ -117,7 +117,7 @@ class Photos
     /**
      * Get idArticle
      *
-     * @return \ArticleBundle\Entity\Article
+     * @return integer 
      */
     public function getIdArticle()
     {

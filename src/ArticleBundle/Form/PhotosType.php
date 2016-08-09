@@ -17,7 +17,6 @@ class PhotosType extends AbstractType
     {
         $builder
             ->add('nom')
-            ->add('idArticle')
             ->add('path', FileType::class)
         ;
     }

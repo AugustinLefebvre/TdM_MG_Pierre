@@ -72,12 +72,14 @@ class PhotoController extends Controller
     public function newPhotoAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
-
+        $article=$em->getRepository('ArticleBundle:Article')->findAll();
         $photos = new Photos();
+
         $form = $this->createForm('ArticleBundle\Form\PhotosType', $photos);
         $form->handleRequest($request);
 
         if ($form->isValid()) {
+            $idarticle=$em->getRepository('ArticleBundle:Article')->findOneByTitre($idArticle=$request->request->get('idarticle'))->getId();
             // $file stores the uploaded PDF file
             /** @var Symfony\Component\HttpFoundation\File\UploadedFile $file */
             $file = $photos->getPath();
@@ -94,13 +96,14 @@ class PhotoController extends Controller
             $photos->setPath($path);
 
             // ... persist the $article variable or any other work
+            $photos->setIdArticle($idarticle);
 
             $em->persist($photos);
             $em->flush();
         }
-
         return $this->render('PhotoBundle:Default:newphoto.html.twig', array(
             'form' => $form->createView(),
+            'articles'=>$article
         ));
     }
 }
