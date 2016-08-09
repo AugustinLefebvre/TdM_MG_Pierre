@@ -3,9 +3,7 @@
 {% block body %}
 
 {{ form_start(form) }}
-    {{ form_row(form.nom) }}
-    {{ form_row(form.idArticle) }}
-    {{ form_row(form.path) }}
+	{{ form_widget(form) }}
     <input type="submit" value="send">
 {{ form_end(form) }}
 
