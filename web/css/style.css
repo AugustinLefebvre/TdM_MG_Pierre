@@ -26,6 +26,10 @@ nav
 	box-shadow: 0px 3px 10px ;
 	border-color: #008000 !important;
 }
+.test
+{
+	margin: auto;
+}
 nav:hover
 {
 	box-shadow: 0px 3px 10px #000000;
@@ -39,6 +43,7 @@ nav:hover
 {
 	height: 44px;
 	padding-left:20px;
+	margin-right: -20px;
 	padding-top: 3px;
 }
 
@@ -230,6 +235,31 @@ footer
 .form-articles
 {
 	margin-top: 75px;
+	margin-bottom: 20px;
+}
+.inform-articles
+{
+	text-align:center;
+	padding-top: 5px;
+}
+@media all and (max-width: 900px){
+	.inputcontent
+	{
+		height: 300px;
+	}
+}
+@media all and (min-width: 900px){
+	.inputcontent
+	{
+		height: 400px;
+	}
+}
+.article-title
+{
+	text-align: center;
+	font-size: 30px;
+	font-weight: bolder;
+	color: #000;
 }
 
 /*========================== PAGE DE PRESENTATION =============================*/
@@ -278,10 +308,12 @@ footer
 .pres-begin
 {
 	padding-top: 25px;
+	text-align: justify;
 }
 .pres-end
 {
 	padding-top: 0px;
+	text-align: justify;
 }
 /*==================================== CONSEIL ===============================*/
 

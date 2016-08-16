@@ -33,5 +33,3 @@ accueil:
     defaults: { _controller: ViewsBundle:Default:index }
 
 
-
-
