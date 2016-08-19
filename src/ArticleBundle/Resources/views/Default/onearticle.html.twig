@@ -2,11 +2,13 @@
 {% block body %}
 	{% if article %}
 		<div class="col-md-6">
-			<div>
+			<div class="col-md-9">
 				<h1>{{ article.titre }}</h1>
+			</div>
+			<div class="col-md-3 date-article">
 				{{article.date.date | date("d/m/y") }}
 			</div>
-			<div>{{ article.contenu|raw }}</div>
+			<div class="corps-article col-md-12">{{ article.contenu|raw }}</div>
 		</div>
 		<div class="col-md-6">
 			<h3>Galerie photos de l'article</h3>

@@ -1,6 +1,13 @@
 {% extends 'base.html.twig' %}
 {% block body %}
+	<h1 class="title"> Photos de : {{ photos[0].titre }}</h1>
 	{% for i in 0..compte-1 %}
-		<img src="{{ asset('uploads/pictures/' ~ photos[i].path ) }}">
+		<div class="col-md-10 col-md-offset-1">
+			{% if photos[i].nom is defined %}
+				<div class="separator"></div>
+				<h3 class="title">{{ photos[i].nom }}</h3>
+			{% endif %}
+			<center><img class="thumbnail photos-in-list file-img" src="{{ asset('uploads/pictures/' ~ photos[i].path ) }}"></center>
+		</div>
 	{% endfor %}
 {% endblock %}

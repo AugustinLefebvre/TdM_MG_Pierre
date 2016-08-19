@@ -19,7 +19,7 @@ class ArticleController extends Controller
     public function articleShowAction()
     {
     	$em = $this->getDoctrine()->getManager();
-        $articles=$em->getRepository('ArticleBundle:Article')->findAll();
+        $articles=$em->getRepository('ArticleBundle:Article')->findBy(array(),array('id'=>'desc') );
         $photos=$em->getRepository('ArticleBundle:Photos')->findAll();
         $compteur=-1;
         foreach ($articles as $article)
@@ -88,7 +88,7 @@ class ArticleController extends Controller
     public function articlespublicsShowAction ()
     {
         $em = $this->getDoctrine()->getManager();
-        $articles=$em->getRepository('ArticleBundle:Article')->findAll();
+        $articles=$em->getRepository('ArticleBundle:Article')->findBy(array(),array('id'=>'desc') );
         $photos=$em->getRepository('ArticleBundle:Photos')->findAll();
         $compteur=-1;
         foreach ($articles as $article)

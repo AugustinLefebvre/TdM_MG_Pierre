@@ -1,17 +1,17 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-
-{{ form_start(form) }}
-	{{ form_row(form.nom, {'label':'nom de la photo (facultatif)' }) }}
-	<label for="articlename">Choisir un article</label>
-	<select name="idarticle" id="articlename">
-		{% for article in articles %}
-			<option>{{ article.titre }}</option>
-		{% endfor %}
-	</select>
-	{{ form_row(form.path )}}
-    <input type="submit" value="ajouter">
-{{ form_end(form) }}
-
+<div class="form-photos col-md-4 col-md-offset-4">
+	{{ form_start(form) }}
+		{{ form_row(form.nom, {'label':'nom de la photo (facultatif)' }) }}
+		<label for="articlename">Choisir un article</label>
+		<select name="idarticle" id="articlename">
+			{% for article in articles %}
+				<option>{{ article.titre }}</option>
+			{% endfor %}
+		</select>
+		{{ form_row(form.path )}}
+	    <input type="submit" value="ajouter">
+	{{ form_end(form) }}
+</div>
 {% endblock %}

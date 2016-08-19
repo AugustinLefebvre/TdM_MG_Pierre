@@ -1,9 +1,18 @@
 {% extends 'base.html.twig' %}
 {% block body %}
+	<h1 class="title">Liste des Articles contenant des photos</h1>
 	{% for i in 0..compte-1 %}
-			<div class="col-md-3 fond-photo">
-				<img src="{{ asset('uploads/pictures/' ~ photos[i].path ) }}" class="img-liste">
-				<div class="linkphotos"><a href="{{ path('photos_article', {'id':photos[i].id } ) }}"><h3>Photos de: {{ photos[i].titre }}</h3></a></div>
+			<div class="col-md-4">
+				<div class="fond-photo">
+					<div class="photo-contain">
+						<img src="{{ asset('uploads/pictures/' ~ photos[i].path ) }}" class="img-liste"/>
+					</div>
+					<div class="linkphotos">
+						<a href="{{ path('photos_article', {'id':photos[i].id } ) }}" class="title-photo">
+							<h3>Photos de: {{ photos[i].titre }}</h3>
+						</a>
+					</div>
+				</div>
 			</div>
 	{% endfor %}
 {% endblock %}

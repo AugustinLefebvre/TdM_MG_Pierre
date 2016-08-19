@@ -65,8 +65,30 @@ nav:hover
 	.map
 	{
 		margin-top: 75px;
+		height: 500px;
+		border: black 2px solid;
+		margin-left: 10%;
+		margin-right: 10%;
+		z-index: 0;
+	}
+}
+@media (min-width: 1400px){
+	.map
+	{
+		margin-top: 75px;
 		height: 600px;
-		border: black 5px solid;
+		border: black 2px solid;
+		margin-left: 10%;
+		margin-right: 10%;
+		z-index: 0;
+	}
+}
+@media (min-width: 1800px){
+	.map
+	{
+		margin-top: 75px;
+		height: 800px;
+		border: black 2px solid;
 		margin-left: 10%;
 		margin-right: 10%;
 		z-index: 0;
@@ -88,6 +110,13 @@ nav:hover
 	bottom: 30px;
 	border-top-left-radius:50%;
 	border-top-right-radius:50%;
+	color: #000;
+	text-decoration: none;
+}
+.bouton-descente:hover
+{
+	color: #000;
+	text-decoration: none;
 }
 .bouton-descente a
 {
@@ -107,7 +136,7 @@ nav:hover
 	width: 100%;
 	z-index: -12;
 	background-color: #008000;
-	position: absolute;
+	margin-top: 10%;
 	bottom: 25px;
 }
 
@@ -185,7 +214,7 @@ footer
 	font-weight: bold;
 }
 
-/*=============================== PAGE ARTICLE ==============================*/
+/*=============================== PAGE ARTICLES ==============================*/
 .contenu
 {
 	text-align: center;
@@ -194,41 +223,51 @@ footer
 	.article
 	{
 		margin-bottom: 30px;
-		height: 300px;
-		overflow: auto;
-		background-color: #f9db89;
+		min-height: 300px;
+		overflow: none;
+		background-color: #FFF;
 		width: 31.3%;
 		margin-left: 1%;
 		margin-right: 1%;
-		border-radius: 5px
+		border-radius: 5px;
+		padding-top: 10px;
+		box-shadow: 0px 5px 5px 0px #656565;
 	}
 }
 @media all and (max-width: 900px){
 	.article{
 		width: 100%;
-		height: 300px;
+		min-height: 300px;
 		overflow: auto;
-		background-color: #f9db89;
+		background-color: #FFF;
 		border-radius: 10px;
 		margin-bottom: 50px;
 		padding-top: 10px;
-		padding-bottom: 10px;
+		box-shadow: 0px 5px 5px 0px #656565;
 	}
 }
 .img-article
 {
 	border: 1px solid black;
 	max-width: 100%;
+	margin-top: 10px;
+	margin-bottom: 20px;
 }
-.datearticle
+.cont-img-art
 {
-	text-align: center;
+	height: 200px;
+	overflow: hidden;
+	border: solid #D8D8D8 1px;
+	background-color:#D8D8D8;
 }
-.separator
+.date-article
 {
-	height: 2px;
-	background-color: #008000;
-	margin-bottom: 5px;
+	text-align: left;
+	padding-top: 30px;
+}
+.article-head
+{
+	padding-top: 5px;
 }
 /*============================= PAGE CREATION ARTICLES ========================*/
 
@@ -256,8 +295,8 @@ footer
 }
 .article-title
 {
-	text-align: center;
-	font-size: 30px;
+	text-align: left;
+	font-size: 20px;
 	font-weight: bolder;
 	color: #000;
 }
@@ -276,10 +315,12 @@ footer
 		width: 40%;
 		margin-left: 5%;
 		margin-right: 5%;
-		background-color: #008000;
-		border-radius: 10px;
+		background-color: #FFF;
+		border-radius: 5px;
 		color: #000;
 		font-size: 17px;
+		text-align: justify;
+		box-shadow: 0px 5px 5px 0px #656565;
 	}
 }
 @media all and (max-width: 900px){
@@ -290,30 +331,18 @@ footer
 		overflow: auto;
 		margin-bottom: 30px;
 		width: 100%;
-		background-color: #008000;
-		border-radius: 10px;
+		background-color: #FFFFFF;
+		border-radius: 5px;
 		color: #000;
 		font-size: 17px;
+		text-align: justify;
 	}	
 }
 .img-profil
 {
-	max-width: 100%;
-
-}
-.img-pierre
-{
-	padding-top: 30px;
-}
-.pres-begin
-{
-	padding-top: 25px;
-	text-align: justify;
-}
-.pres-end
-{
-	padding-top: 0px;
-	text-align: justify;
+	float: left;
+	max-width: 50%;
+	margin-right: 20px;
 }
 /*==================================== CONSEIL ===============================*/
 
@@ -357,23 +386,51 @@ footer
 /*============PAGE LISTE PHOTOS============*/
 .fond-photo
 {
-	background-color: rgba(91, 127, 150, 0.2);
-	height: 550px;
-	border: 1px solid black;
+	background-color: #FFF;
+	height: 300px;
+	width: 90%;
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-bottom: 5%;
+	box-shadow: 0px 5px 5px 0px #656565;
+	border-radius: 5px;
 }
 .img-liste
 {
-	width: 90%;
-	max-height: 500px;
-	margin-top: 20px;
-	margin-left:5%;
-	margin-right: 5%;
+	max-width: 100%;
 }
 .linkphotos
 {
-	position:absolute;
-	bottom: 20px;
-	width: 90%;
+	text-align: center;
+	margin-bottom: 5px;
+
+}
+.separator
+{
+	height: 2px;
+	width: 100%;
+	background-color: #D8D8D8;
+}
+.title-photo
+{
+	color: #000;
+	text-decoration: none;
+}
+
+.photo-contain
+{
+	height: 200px;
+	border: solid #D8D8D8 1px;
+	background-color:#FFF;
+	overflow: hidden;
+	padding-top: 20px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.title-photo:hover
+{
+	color: #000;
 }
 
 @media (max-width: 900px){
@@ -387,6 +444,14 @@ footer
 	}
 }
 
+.photos-in-list
+{
+	max-width: 100%;
+}
+.filepart
+{
+	text-align: center;
+}
 /*==============PAGE DE CREATION DE POINTS=============== */
 
 .title
@@ -396,7 +461,7 @@ footer
 	padding-bottom: 0px;
 }
 
-.map
+.map2
 {
 	height: 600px;
 	border: black 5px solid;
@@ -407,4 +472,24 @@ footer
 #map2
 {
 	margin-top: 0px;
+}
+
+/*=====================formulaire photos======================*/
+
+.form-photos
+{
+	border: 1px solid black;
+	background-color: #FFF;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+/*========================PAGE 1 ARTICLE==========================*/
+
+.corps-article
+{
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background-color: #FFF;
+	border-radius: 5px;
 }

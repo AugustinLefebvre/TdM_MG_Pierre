@@ -2,28 +2,29 @@
 
 {% block body %}
 <div class="baisse-haut"></div>
-<h1 class="article-title">Liste des articles</h1>
-	
+<h1 class="title">Liste des articles</h1>
 	{% set i = 0 %}
 	{% for article in articles %}
-	
+		{% set hasphoto = 0 %}
 	<div class="col-md-4 article">	
-		<div class="row">
-			<div class="col-md-6 col-xs-6"><a href="{{ path('one_article', {'id':article.id } ) }}" ><button class="btn btn-default">{{ article.titre }}</button></a></div>
-			<div class="col-md-6 col-xs-6 datearticle">{{ article.date.date | date("d/m/y") }}</div>
+		{% if tabphoto != 1 %}
+			<div class="cont-img-art">
+			{% for j in 0..compteur %}
+				{% if tabphoto[j].path != 1 and tabphoto[j].idArticle == tab[i].id and hasphoto == 0 %}
+					<img src="{{ asset('/uploads/pictures/' ~tabphoto[j].path) }}" alt="test" class="img-article">
+					{% set hasphoto = 1 %}
+				{% endif %}
+			{% endfor %}
+			</div>
+		{% endif %}
+		<div class="row article-head">
+			<div class="col-md-12 col-xs-12 article-title">{{ article.titre }}</div>
+			<div class="col-md-3 col-xs-3 datearticle">{{ article.date.date | date("d/m/y") }}</div>
+			<div class="col-md-3 col-xs-3 col-md-offset-6"><a href="{{ path('one_article', {'id':article.id } ) }}" ><button class="btn btn-info">Voir l'article</button></a></div>
 		</div>
 		<br/>
-		<div class="contenu">{{ article.contenu|raw }}</div>
 		<br/>
-		{% if tabphoto != 1 %}
-			<div class="separator"></div>
-			{% for j in 0..compteur %}
-				{% if tabphoto[j].path != 1 and tabphoto[j].idArticle == tab[i].id %}
-					<img src="{{ asset('/uploads/pictures/' ~tabphoto[j].path) }}" alt="test" class="img-article">
-				{% endif %}
-
-			{% endfor %}
-		{% endif %}
+		
 	</div>
 
 	{% set i = i+1 %}
