@@ -1,7 +1,8 @@
 {% extends 'base.html.twig' %}
 {% block body %}
 	<h1 class="title">Liste des Articles contenant des photos</h1>
-	{% for i in 0..compte-1 %}
+{% if photos != null  %}	
+{% for i in 0..compte-1 %}
 			<div class="col-md-4">
 				<div class="fond-photo">
 					<div class="photo-contain">
@@ -15,4 +16,5 @@
 				</div>
 			</div>
 	{% endfor %}
+	{% endif %}
 {% endblock %}
