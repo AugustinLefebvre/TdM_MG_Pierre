@@ -4,7 +4,7 @@ function initMap()
 	var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789';
 	var labelIndex = 0;
 	var markersarray=[];
-	map = new google.maps.Map(document.getElementById('map2'), {
+	var map = new google.maps.Map(document.getElementById('map2'), {
   		center: {lat:26.682451 , lng:7.985057},
   		scrollwheel: true,
   		zoom: 2,
