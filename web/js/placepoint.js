@@ -10,6 +10,7 @@ function initMap()
   		zoom: 2,
   		mapTypeId: google.maps.MapTypeId.TERRAIN,
 	});
+	console.log(map);
 	for (i = 0 ; i < pointstab.length ; i++ )
 		{
 			var point = {lat: pointstab[i][0], lng: pointstab[i][1]};
