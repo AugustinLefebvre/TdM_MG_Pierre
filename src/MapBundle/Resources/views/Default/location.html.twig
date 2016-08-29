@@ -1,0 +1,8 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<form action="{{ path('location') }}" method="post">
+		<input name="newlocation"/>
+		<input type="submit" value="changer"/>
+	</form>
+{% endblock %}

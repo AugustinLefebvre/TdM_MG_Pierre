@@ -64,8 +64,7 @@ nav:hover
 @media (min-width: 900px){
 	.map
 	{
-		margin-top: 75px;
-		height: 500px;
+		height: 450px;
 		border: black 2px solid;
 		margin-left: 10%;
 		margin-right: 10%;
@@ -75,8 +74,7 @@ nav:hover
 @media (min-width: 1400px){
 	.map
 	{
-		margin-top: 75px;
-		height: 600px;
+		height: 550px;
 		border: black 2px solid;
 		margin-left: 10%;
 		margin-right: 10%;
@@ -86,8 +84,7 @@ nav:hover
 @media (min-width: 1800px){
 	.map
 	{
-		margin-top: 75px;
-		height: 800px;
+		height: 750px;
 		border: black 2px solid;
 		margin-left: 10%;
 		margin-right: 10%;
@@ -187,6 +184,11 @@ nav:hover
 	border-radius: 5px;
 	text-align:center;
 	padding-bottom: 10px;
+	margin-bottom: 30px;
+}
+.btn-conseil
+{
+	margin-bottom: 60px;
 }
 
 /* btns hovers */
@@ -435,7 +437,6 @@ footer
 
 @media (max-width: 900px){
 	#map{
-		margin-top: 75px;
 		height: 420px;
 		border: black 5px solid;
 		margin-left: 10%;
@@ -459,6 +460,7 @@ footer
 	text-align:center;
 	color: #000;
 	padding-bottom: 0px;
+
 }
 
 .map2

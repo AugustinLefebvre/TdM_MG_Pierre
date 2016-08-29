@@ -17,3 +17,11 @@ article_create:
 articlespublics_show:
     path:     /articles
     defaults: { _controller: ArticleBundle:Article:articlespublicsShow }
+
+articleremove_show:
+    path:     /user/remove/article
+    defaults: { _controller:ArticleBundle:Article:removeArticleShow }
+
+articleremove:
+    path:     /user/remove/article_check
+    defaults: { _controller:ArticleBundle:Article:removeArticle }

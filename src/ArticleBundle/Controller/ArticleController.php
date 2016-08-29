@@ -141,4 +141,29 @@ class ArticleController extends Controller
             "photos"=>$photos,
             ));
     }
+
+    public function removeArticleShowAction ()
+    {
+        $em=$this->getDoctrine()->getManager();
+        $articles=$em->getRepository('ArticleBundle:Article')->findAll();
+
+        return $this->render('ArticleBundle:Default:removearticle.html.twig', array(
+            'articles'=>$articles,
+            ));
+    }
+    public function removeArticleAction (Request $request)
+    {
+        $em=$this->getDoctrine()->getManager();
+        $articlename=$request->request->get('articlename');
+
+        if(!empty($articlename))
+        {
+            $article=$em->getRepository('ArticleBundle:Article')->findOneByTitre($articlename);
+            $em->remove($article);
+            $em->flush();
+        }
+        $url = $this -> generateUrl('article_show');
+        $response = new RedirectResponse($url);
+        return $response;
+    }
 }

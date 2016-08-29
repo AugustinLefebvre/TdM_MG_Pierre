@@ -2,6 +2,9 @@
 
 {% block body %}
 <!-- partie carte Google maps-->
+<div class="baisse-haut"></div>
+<h1 class="title">Tour du monde de Pierre et MG</h1>
+<h3 class="title">MG et Pierre sont actuellement à {{ location }}</h3>
     <div id="map" class="map"></div>
 <!-- transition bas -->
     <div class="row">
@@ -25,7 +28,7 @@
                 </div>
             </a>
             <a href="{{ path('conseil') }}">
-                <div class="col-md-2 col-md-offset-2 col-xs-12 btn-bottom">
+                <div class="col-md-2 col-md-offset-2 col-xs-12 btn-bottom btn-conseil">
                     <h3>Conseils</h3>
                     <img src="{{ asset('img/iconeconseil.png') }}" alt="article">
                 </div>
@@ -43,7 +46,7 @@
         var markericon = "{{ asset('img/marker.png') }}"
         var pointstab = [];
         {% for point in points %}
-            pointstab[{{ i }}] = [{{ point.lat }} , {{ point.lng }}, "{{ point.name }}" ];
+            pointstab[{{ i }}] = [{{ point.lat }} , {{ point.lng }}, "{{ point.name }}", "{{ point.id }}" ];
             {% set i = i+1 %}
         {% endfor %}
     </script>

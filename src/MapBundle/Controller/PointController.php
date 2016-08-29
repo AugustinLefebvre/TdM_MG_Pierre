@@ -40,4 +40,21 @@ class PointController extends Controller
         $response = new RedirectResponse($url);
         return $response;
 	}
+	public function newLocationAction (Request $request)
+	{
+		$em=$this->getDoctrine()->getManager();
+		$location=$em->getRepository('MapBundle:Location')->findOneById(1);
+		$newlocation=$request->request->get('newlocation');
+		if(!empty($newlocation))
+		{
+			$location->setPlace($newlocation);
+			$em->persist($location);
+			$em->flush();
+			
+			$url = $this -> generateUrl('accueil');
+        	$response = new RedirectResponse($url);
+        	return $response;
+		}
+		return $this->render('MapBundle:Default:location.html.twig');
+	}
 }

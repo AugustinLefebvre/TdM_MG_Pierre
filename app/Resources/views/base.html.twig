@@ -31,7 +31,7 @@
                     <div class="col-md-6 col-md-offset-3 test">
                         <ul class="nav navbar-nav listebtn">
                             <li><a class="menu-btn" href="{{ path('accueil') }}">Accueil</a></li>
-                            <li><a class="menu-btn" href="{{ path('presentation')}}">Qui sommes nous ?</a></li>
+                            <li><a class="menu-btn" href="{{ path('presentation')}}">Qui sommes-nous ?</a></li>
                             <li><a class="menu-btn" href="{{ path('conseil') }}">Conseillez-nous</a></li>
                             <li><a class="menu-btn" href="{{ path('articlespublics_show') }}">Articles</a></li>
                         </ul>
@@ -47,6 +47,9 @@
                                     <li><a href="{{ path('article_show') }}">Ajout d'article</a></li>
                                     <li><a href="{{ path('new_photo') }}">Ajout de photo</a></li>
                                     <li><a href="{{ path('newpoint_view') }}">Ajout d'un point</a></li>
+                                    <li><a href="{{ path('conseil_view') }}">Conseils</a></li>
+                                    <li><a href="{{ path('articleremove_show') }}">Supprimer un article</a></li>
+                                    <li><a href="{{ path('location') }}">Changer position</a></li>
                                     <li role="separator" class="divider"></li>
                                     <li><a href="{{ path('fos_user_security_logout') }}">{{ 'layout.logout'|trans({}, 'FOSUserBundle') }}</a></li>
                                 </ul>

@@ -43,7 +43,7 @@ class ConseilController extends Controller
     public function conseilViewAction ()
     {
         $em = $this->getDoctrine()->getManager();
-        $conseil=$em->getRepository('ConseilBundle:Conseil')->findAll();
+        $conseil=$em->getRepository('ConseilBundle:Conseil')->findBy(array(),array('id'=>'desc'));
         
         return $this->render('ConseilBundle:Default:conseilview.html.twig', array(
             'conseils' => $conseil

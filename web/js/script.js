@@ -1,8 +1,8 @@
 function initMap()
 {
 	var markersarray=[];
-	var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789';
-	var labelIndex = 0;
+	// var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+	// var labelIndex = 0;
 	map = new google.maps.Map(document.getElementById('map'), {
   		center: {lat:26.682451 , lng:7.985057},
   		scrollwheel: false,
@@ -17,7 +17,7 @@ function initMap()
 			var marker = new google.maps.Marker({
 			    position: point,
 			    map: map,
-			    label: labels[labelIndex++ % labels.length],
+			    // label: labels[labelIndex++ % labels.length],
 			    title: pointstab[i][2]
 			});
 			markersarray.push(point);

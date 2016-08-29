@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<form action="{{ path('articleremove') }}" method="post">
+		<select name="articlename">
+			{% for article in articles %}
+				<option>{{ article.titre }}</option>
+			{% endfor %}
+		</select>
+		<input type="submit" value="Supprimer">
+	</form>
+{% endblock %}

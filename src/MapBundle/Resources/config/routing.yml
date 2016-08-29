@@ -5,3 +5,7 @@ newpoint_view:
 create_point:
     path:     /user/newpoint
     defaults: { _controller: MapBundle:Point:newPoint }
+
+location:
+    path:    /user/location
+    defaults: { _controller: MapBundle:Point:newLocation }
