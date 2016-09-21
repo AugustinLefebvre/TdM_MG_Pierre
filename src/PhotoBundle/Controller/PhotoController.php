@@ -72,7 +72,7 @@ class PhotoController extends Controller
     public function newPhotoAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
-        $article=$em->getRepository('ArticleBundle:Article')->findAll();
+        $article=$em->getRepository('ArticleBundle:Article')->findBy(array(),array('id'=>'desc') );
         $photos = new Photos();
 
         $form = $this->createForm('ArticleBundle\Form\PhotosType', $photos);
